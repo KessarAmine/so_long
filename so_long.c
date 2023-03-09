@@ -6,7 +6,7 @@
 /*   By: kmohamed <kmohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:56:02 by kmohamed          #+#    #+#             */
-/*   Updated: 2023/03/08 18:53:41 by kmohamed         ###   ########.fr       */
+/*   Updated: 2023/03/09 13:18:35 by kmohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,16 @@ int	path(t_env *env)
 
 void	ft_put_free(t_env *env)
 {
-	mlx_destroy_image(env->mlx, env->floor);
-	free(env->floor);
-	mlx_destroy_image(env->mlx, env->wall);
-	free(env->wall);
-	mlx_destroy_image(env->mlx, env->bed);
-	free(env->bed);
-	mlx_destroy_image(env->mlx, env->pie);
-	free(env->pie);
-	mlx_destroy_image(env->mlx, env->baby);
-	free(env->pie);
+	if (env->floor)
+		mlx_destroy_image(env->mlx, env->floor);
+	if (env->wall)
+		mlx_destroy_image(env->mlx, env->wall);
+	if (env->bed)
+		mlx_destroy_image(env->mlx, env->bed);
+	if (env->pie)
+		mlx_destroy_image(env->mlx, env->pie);
+	if (env->baby)
+		mlx_destroy_image(env->mlx, env->baby);
 }
 
 void	exit_game(int status, t_env *env)
